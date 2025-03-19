@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA-Seq</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        section li{
+            line-height: 35px;
+        }
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+    
+        figure img {
+            max-width: 600px;
+            height: auto; 
+            border-radius: 8px;
+        }
+    
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+        </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>RNA-Seq</p>
+                <a href="3.1introduction.html" >分析原理</a>
+                <a href="3.2pipeline.html">分析流程</a>
+                <a href="3.3result.html">结果展示</a>
+                <a href="3.4questions.html">常见问题</a>
+        </div>
+        <section>
+        <h3>RNA-Seq概述</h3>
+        <p>RNA-Seq利用高通量测序技术对转录组进行全面的分析，能够提供基因表达水平、转录本结构、可变剪接、融合基因、RNA编辑以及非编码RNA等信息。通过将RNA逆转录为cDNA并进行测序，RNA-Seq可以揭示特定条件下基因的表达变化、发现新的转录本、识别疾病相关的分子标志物，并研究细胞异质性和基因调控网络。</p>
+        <br>
+		
+        <h3>测序原理</h3>
+        <p>基于高通量测序技术，通过对RNA分子进行测序来全面分析转录组。其核心步骤包括：首先从细胞或组织中提取总RNA或特定类型的RNA（如mRNA），然后利用逆转录酶将RNA反转录为互补DNA（cDNA）。接着，在cDNA片段的两端连接测序适配子，构建测序文库。文库经过质量检测后，使用高通量测序平台（如Illumina、PacBio或Oxford Nanopore）进行测序，生成大量的短读长或长读长序列数据。最后，通过生物信息学分析对测序数据进行质量控制、比对到参考基因组或转录组、定量基因表达水平，并进一步挖掘可变剪接、新转录本、融合基因等信息。RNA-Seq的原理使其能够高灵敏度、高分辨率地揭示转录组的复杂性和动态变化。
+		</p>
+		
+        <figure>
+            <img src="image/RNA-seq/Summary_of_RNA-Seq.svg.png" alt="RNA-seq测序原理" style="width: 1000px; height: auto;">
+            <figcaption>图1 RNA-seq测序原理</figcaption>
+        </figure>
+		
+        <h3>应用领域</h3>
+        <p><b>疾病研究</b>：研究疾病的分子机制，识别与疾病相关的关键基因或通路。发现潜在的生物标志物，用于疾病诊断、预后评估或治疗靶点筛选。</p>
+        <br>
+		
+        <p><b>癌症研究</b>：分析肿瘤的基因表达谱，识别驱动基因、融合基因或免疫相关标志物。研究肿瘤微环境和细胞异质性，揭示肿瘤的发生、发展和转移机制。</p>
+        <br>
+		
+        <p><b>药物开发</b>：评估药物对基因表达的影响，筛选潜在药物靶点。研究耐药机制，优化药物设计和治疗方案。</p>
+        <br>
+		
+        <p><b>农业和生态学</b>：研究作物或动物的基因表达模式，筛选抗逆性或高产相关基因。分析微生物群落的转录组，揭示其功能和作用机制。</p>
+        <br>
+		
+        <p><b>个性化医学</b>：基于患者的转录组数据，制定个性化的治疗方案。通过精准医疗，提高疾病治疗的效果和患者的生存率。</p>
+        <figure>
+            <img src="image/RNA-seq/rnaseqapplication.jpg" alt="RNA-Seq应用">
+            <figcaption>图2 RNA-Seq应用领域</figcaption>
+        </figure>
+        <br>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

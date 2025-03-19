@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10X 单细胞转录组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+    section li{
+        line-height: 35px;
+    }
+    figure {
+        text-align: center; 
+        margin: 20px 0;
+    }
+
+    figure img {
+        max-width: 600px;
+        height: auto; 
+        border-radius: 8px;
+    }
+
+    figcaption {
+        font-size: 20px;
+        color: #666;
+        font-style: bold;
+        margin-top: 10px; 
+    }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>10X 单细胞转录组测序</p>
+                <a href="2.1introduction.html">分析原理</a>
+                <a href="2.2pipeline.html">分析流程</a>
+                <a href="2.3result.html">结果展示</a>
+                <a href="2.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>结果展示</h3>
+                <p><b>1、UMAP降维分析展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/3.allSamps.UMAP.Cluster.hm.png" alt="UMAP">
+                    <figcaption>图1 UMAP降维图</figcaption>
+                </figure>
+				<br>
+				
+                <p><b>2、不同Cluster的差异基因分析展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/5.allCluster.diffgenes.top3.dotplot.png" alt="差异基因点图">
+                    <figcaption>图2 top3差异基因点图</figcaption>
+                </figure>
+				
+                <figure>
+                    <img src="image/scRNA-seq/5.allCluster.diffgenes.top3.heatmap.png" alt="差异基因热图">
+                    <figcaption>图3 top3差异基因热图</figcaption>
+                </figure>
+				<br>
+				
+                <p><b>3、Marker基因表达展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/5.C1-BIK_NNAT_GNG8_KRT20_featureP.png" alt="Marker">
+                    <figcaption>图4 Marker基因UMAP图</figcaption>
+                </figure>
+				<br>
+				
+                <p><b>4、inferCNV结果展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/infercnv.preliminary.png" alt="inferCNV">
+                    <figcaption>图5 inferCNV结果</figcaption>
+                </figure>
+				<br>
+				
+                <p><b>5、拟时序分析展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/1.allSamps.monocle.Pseudotime.png" alt="monocle">
+                    <figcaption>图6 拟时序分析展示图</figcaption>
+                </figure>
+				<br>
+				
+                <p><b>6、细胞通讯分析展示</p></b>
+                <figure>
+                    <img src="image/scRNA-seq/net_number_strength.png" alt="cellchat">
+                    <figcaption>图7 cellchat分析结果</figcaption>
+                </figure>
+                <br>
+				
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+    
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

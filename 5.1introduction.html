@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全基因组甲基化测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+
+        .visual-disc li {
+            list-style-type: disc;
+            line-height: 40px;
+			list-style-position: inside;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>全基因组甲基化测序</p>
+                <a href="5.1introduction.html">分析原理</a>
+                <a href="5.2pipeline.html">分析流程</a>
+                <a href="5.3result.html">结果展示</a>
+                <a href="5.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>全基因组甲基化测序概述</h3>
+                <p> 全基因组甲基化测序（Whole Genome Bisulfite Sequencing, WGBS）是一种用于在全基因组范围内检测DNA甲基化状态的高通量测序技术。DNA甲基化是一种重要的表观遗传修饰，通常发生在CpG二核苷酸中的胞嘧啶（C）上，形成5-甲基胞嘧啶（5mC）。这种修饰在基因表达调控、基因组稳定性、细胞分化和发育等生物学过程中起着关键作用。
+				一般来说，高DNA甲基化水平会抑制基因表达，去甲基化则可以使得基因重新表达。DNA甲基化参与了众多的细胞生命活动，包括细胞分化、组织特异性基因表达、基因组印记、X染色体失活等。异常的DNA甲基化会导致发育异常、肿瘤等疾病的发生。因此，DNA甲基化的研究对于深入理解基因表达、个体发育以及疾病的发生、发展机制都具有重要意义。
+                </p>  
+                <br>
+            <h3>测序原理</h3>
+			    <p> 亚硫酸氢盐（Bisulfite）可以将未甲基化的胞嘧啶（C）转化为尿嘧啶（U），而甲基化的胞嘧啶（5mC）保持不变。在后续的PCR扩增中，尿嘧啶（U）会被替换为胸腺嘧啶（T），而5mC仍保持为C。通过比对测序结果与参考基因组，可以确定甲基化位点及其甲基化状态。
+                </p>  
+                <br>
+            <figure>
+                <img src="image/WGBS/priciple.png" al="WGBS 测序原理">
+                <figcaption>图1 甲基化技术原理示意图</figcaption>
+            </figure>
+			
+                <p>甲基化测序流程主要包括：<b>DNA提取、亚硫酸氢盐处理、文库构建、高通量测序以及数据分析。</b></p>
+                <br>
+                <p>DNA甲基化是一种被广泛研究的表观遗传修饰方式，与组蛋白修饰等方式一起，在调控基因表达和染色质构象等方面发挥了重要作用。通常地，DNA甲基化指5-甲基胞嘧啶（5mC），它是在DNA甲基转移酶（DNMT）的作用下将甲基基团添加到胞嘧啶的5’C位置上形成的结构。哺乳动物细胞中甲基化主要发生在CG双核苷酸的胞嘧啶上，植物细胞中则存在很大比例的non-CG（CHH、CHG，H代表A、C、T）甲基化。具体步骤如下：</p>
+                <br>
+                <p><b>首先，</b>从样本中提取高质量的基因组DNA。使用亚硫酸氢盐处理DNA，将未甲基化的C转化为U。将处理后的DNA片段化，并添加测序接头，构建测序文库。</p>
+                <br>
+                <p><b>高通量测序：</b>使用高通量测序平台（如Illumina）对文库进行测序。
+                </p>
+                <br>
+                <p><b>数据分析：</b>比对测序数据到参考基因组。识别甲基化位点并计算甲基化水平（甲基化率 = 甲基化C / (甲基化C + 未甲基化C)）。进行差异甲基化区域（DMR）分析、功能注释等。</p>
+				<br>
+                <div class="application">
+                    <h3>应用范围</h3>
+                    <ul class="visual-disc">
+                        <li>研究胚胎发育和细胞分化过程中的甲基化动态变化；</li>
+                        <li>识别癌症中的异常甲基化模式，发现潜在的生物标志物和治疗靶点；</li>
+                        <li>研究环境因素（如饮食、毒素）对甲基化模式的影响；</li>
+						<li>探索复杂疾病（如糖尿病、心血管疾病）的表观遗传机制；</li>
+                        <li>研究植物生长发育、逆境响应中的甲基化调控机制；</li>
+						<br>
+                </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

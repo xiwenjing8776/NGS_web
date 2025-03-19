@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RNA-Seq</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        section li{
+            line-height: 35px;
+        }
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+    
+        figure img {
+            max-width: 600px;
+            height: auto; 
+            border-radius: 8px;
+        }
+    
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+
+        .visual-disc li {
+            list-style-type: none;
+            line-height: 40px;
+			list-style-position: inside;
+        }
+
+        </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>RNA-Seq</p>
+                <a href="3.1introduction.html" >分析原理</a>
+                <a href="3.2pipeline.html">分析流程</a>
+                <a href="3.3result.html">结果展示</a>
+                <a href="3.4questions.html">常见问题</a>
+        </div>
+        <section>
+        <h3>RNA-Seq分析流程</h3>
+        <p>RNA-seq分析平台整体包括基础分析、标准分析和个性化分析三个部分。</p>  
+                <p></p>
+                <ul>
+                    <li><p><b>基础分析（Basic Analysis）</b>是对原始测序数据进行fastqc质控、Trim去接头、Aln参考基因组比对、Dedup去重、featureCounts定量，得到基因表达矩阵。</p></li>
+                    <li><p><b>标准分析（Standard Analysis）</b>是基于基因表达矩阵进行下游分析，包括样本相关性分析、差异基因分析（DESeq2、edgeR）、PCA主成分分析、HCA层次聚类分析、GO、KEGG通路富集分析、GSEA富集分析、GSVA基因集（通路）级别的差异分析等。</p></li>
+                    <li><p><b>个性化分析（Personalized Analysis）</b>包括免疫浸润差异分析、融合基因、可变剪切分析、加权基因共表达网络分析等，详细分析步骤见下图：
+                    </p></li>
+                </ul>
+                <figure>
+                    <img src="image/RNA-seq/rna-seq-pipeline.png" alt="RNA-seq测序流程图">
+                    <figcaption>RNA-seq分析流程</figcaption>
+                </figure>
+        <br>
+        <h3>基础分析</h3>
+            <p>采用fastqc进行质控、Trim去接头、Aln参考基因组比对、Dedup去重、featureCounts定量等，得到基因表达矩阵。</p>
+        <br>
+		
+        <h3>标准分析</h3>
+            <p>基于基因表达矩阵进行下游分析，包括样本相关性分析、差异基因分析（DESeq2、edgeR）、PCA主成分分析、HCA层次聚类分析、GO、KEGG通路富集分析、GSEA富集分析、GSVA通路级别的差异分析等。</p>
+			
+            <li><b>样本相关性分析</b>
+            <p>使用corrplot包对转录组数据中的样本之间的相关性进行计算和绘制热图，以评估生物学重复的效果；一般要求生物学重复样品间相关性至少要大于0.8，否则需要对样品做出合适的解释，或者重新进行实验。</p>
+			
+            <li><b>PCA主成分分析</b>
+            <p>主成分分析可以直观体现样本组间原始差异。</p>
+			
+            <li><b>HCA层次聚类分析</b>
+            <p>层次聚类分析通过建立一个集群层次结构来聚类分析的方法，用于将数据集中的样本进行层次聚类，以便发现样本之间的相似性。</p>
+			
+            <li><b>差异基因分析</b> 
+            <p>采用DESeq2或edgeR方法寻找组间（Case vs Control）的差异基因，差异显著阈值标准为 |log2FC| >= 1和FDR p-value < 0.05，红色标注为Case组上调基因，蓝色标注为Case组下调基因，火山图中显示TOP10基因名字。</p>
+			 
+            <li><b>GO通路富集分析</b>
+            <ul class="visual-disc">
+                <li>GO数据库全称是Gene Ontology（基因本体），把基因的功能分成了三个部分，分别是细胞组分（cellular component, CC），
+                    分子功能（molecular function, MF），生物过程（biological process, BP）。</li>
+                <li>通路富集显著阈值为 p-value < 0.05 & q-value < 0.05，每个部分展示TOP10的terms。</li>
+            </ul>
+
+            <li><b>KEGG通路富集分析</b>
+            <ul class="visual-disc">
+                <li>KEGG（Kyoto Encyclopedia of Genes and Genomes） 由日本京都大学生物信息学中心的Kanehisa实验室于1995年建立，是一个整合了基因组、化学和系统功能信息的数据库。</li>
+                <li>通路富集显著阈值为p-value < 0.05 & q-value < 0.05，展示TOP30的terms。</li>
+            </ul>
+			
+            <li><b>GSVA通路差异分析</b>
+            <p>基因集变异分析(GSVA)是一种特殊类型的基因集富集方法，通过对分析的功能单元进行概念上简单但功能强大的改变——从基因到基因集，从而实现对分子数据的路径中心分析。 简单来说，就是将分析对象由基因换成了基因集，进行基因集（通路）级别的差异分析。
+            </p>
+			
+            <li><b>免疫浸润分析</b>
+            <p>分别采用8种已发表的免疫浸润方法（CIBERSORT、TIMER、xCell、MCPcounter、ESTIMATE、EPIC、IPS和quanTIseq)，用于解析肿瘤微环境。</p>      
+            <br>
+
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

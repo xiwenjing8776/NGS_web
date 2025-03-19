@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navlist {
+    list-style: none;
+    background-color: #e1e4ed;
+    display: flex;
+    padding: 10px;
+    float: right;
+}
+.navlist > li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav {
+    background-color:#e1e4ed;
+}
+
+.btlist {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    display: block;
+    float: ri;
+}
+.btlist:hover {
+    background-color: #afc6da;
+}
+.droplist {
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #486cc698;
+    width: 120px;
+    display: none;
+    text-align: center;
+}
+.droplist li {
+    border-bottom: 1px solid #6c7ed9;
+}
+.droplist li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+}
+.droplist li a:hover {
+    background-color: #93a6e0;
+}
+.navlist li:hover .droplist {
+    display: block;
+}
+.img-center {
+display: block;
+margin: 0 auto;
+max-width: 100%;
+height: auto;
+}
+
+header {
+background-color: #044483;
+top: 0;
+top: 200;
+width: 100%;
+}
+
+@media (max-width: 768px) {
+header h1 {
+    font-size: 1.5em;
+}
+footer p {
+    font-size: 0.9em;
+}
+}
+footer {
+background-color: #044483;
+margin-top: auto;
+font-size:18px;
+padding: 20px;
+color: white;
+height: 450px;
+clear: both;
+}
+header {   
+color: black;
+text-align: center;
+padding: 8px 0;
+}
+footer p {
+    text-align: center;
+}
+footer div.contact {
+text-align: center;
+}
+footer li {
+    list-style-type: none;
+}
+footer a {
+    color: #ced3e2;
+}
+footer {
+width: 100%;
+padding: 20px;
+text-align: center;
+height: auto;
+}
+
+.footer-content {
+display: flex;
+justify-content: space-between; /* 将两栏分开 */
+margin-top: 20px;
+}
+
+.address, .link {
+flex: 1; /* 让两栏平分宽度 */
+padding: 0 10px; /* 添加内边距 */
+}
+
+.address {
+text-align: center; /* 左对齐 */
+line-height: 40px;
+}
+
+.link {
+text-align: center; /* 左对齐 */
+line-height: 30px;
+}
+
+body {
+font-family: Arial, sans-serif;
+line-height: 35px;
+margin: 0;
+padding: 0;
+color: #333;
+background: linear-gradient(rgb(245, 250, 254) 0.4%, rgb(255, 255, 255) 100%);;
+}
+
+header {
+color: #fff;
+padding: 10px 0;
+text-align: center;
+}
+
+nav ul {
+list-style: none;
+padding: 0;
+}
+
+nav ul li {
+display: inline;
+margin: 0 15px;
+}
+
+nav ul li a {
+color:black;
+text-decoration: none;
+}
+
+nav {
+    float: right;
+    width: 100%;
+}
+
+section {
+padding: 5px;
+font-size: 18px;
+margin: 5px;
+background-color: #fff;
+border-radius: 5px;
+background: linear-gradient(rgb(245, 250, 254) 0.4%, rgb(255, 255, 255) 100%);;
+}
+
+/* 鼠标悬停时的效果 */
+.navbar a:hover {
+background-color: #d5e7ed; /* 悬停时背景变亮 */
+border-color: #0056b3; /* 悬停时边框颜色加深 */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加阴影 */
+transform: translateY(-2px); /* 按钮稍微上移 */
+}
+
+.navbar a {
+    display: inline-block;
+    width: 100px;
+    height: 50px;
+    background-color: #ced3e2;
+    color: #0f0303;
+    text-align: center;
+    line-height: 50px;
+    border: #084b89;
+    border-radius: 5px 5px 0px 0px;
+    border-top: #0056b3;
+    margin-left: 15px; /* 根据需要调整链接之间的间距 */
+    text-decoration: none; /* 移除下划线 */
+    color: inherit; /* 继承父元素的颜色 */
+}
+
+.navbar a.active {
+    background-color: #004AAD; /* 选中的深蓝色 */
+    color: white;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* 将内容对齐到右侧 */
+    align-items: center; /* 垂直居中 */
+    border-bottom: 2px solid #ccc; /* 底部横线 */
+}
+
+.navbar p {
+    margin-right: auto; /* 将标题推到左侧 */
+    font-size: 20px;
+    color: #004AAD;
+}
+
+
+
+
+aside {
+background-color:#e1e4ed ;
+color: #0f0e0e;
+padding: 20px;
+line-height: 20px;
+font-size:20px;
+float: left;
+border-radius: 5px;
+left:300px;
+top: 200px;
+position:relative;
+height: 500px;
+}
+
+aside p {
+background-color: white; /* 背景颜色 */
+color: black; /* 文字颜色 */
+text-align: left; /* 文字左对齐 */
+padding: 15px; /* 内边距 */
+margin: 10px 0; /* 外边距，上下为 10px，左右为 0 */
+border-bottom: 2px solid #005bac; /* 底部边框 */
+}
+
+aside p a {
+color: black; /* 链接文字颜色 */
+text-decoration: none; /* 取消下划线 */
+}
+
+aside p a:hover {
+ text-decoration: underline; /* 鼠标悬停时显示下划线 */
+}
+
+
+section {
+margin-top: 20px;
+}
+
+main {
+flex: 1; /* 占据剩余空间 */
+width: 50%;
+margin-top: 20px;
+float: right;
+box-sizing: border-box;
+position: relative;
+right: 500px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+section h3 {
+    color: #004AAD;
+}
+
+section h4 {
+    color: #2a375e;
+}
+
+section b {
+    color: #004AAD;
+}
+
+.application p {
+    line-height: 30px;
+}

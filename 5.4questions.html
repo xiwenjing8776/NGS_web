@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全基因组甲基化测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>全基因组甲基化测序</p>
+                <a href="5.1introduction.html">分析原理</a>
+                <a href="5.2pipeline.html">分析流程</a>
+                <a href="5.3result.html">结果展示</a>
+                <a href="5.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>常见问题</h3>
+                <li><b>Q1: 全基因组甲基化测序在项目开始之前需要考虑哪些因素？</b>
+                        <ul>
+                            <li>需要考虑以下因素：是否为低甲基化率的物种；该物种的基因组完成情况如何（影响BS-SEQ的比对）；基因组是否存在复杂因素：GC含量偏高、杂合度偏高、转座子、重复区域等。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+               
+                <li><b>Q2：全基因组甲基化测序有哪些优势？</b>
+                        <ul>
+                            <li>在全基因组水平，单碱基分辨率检出甲基化位点，不仅能够高精度发现CpG岛等常见区域的甲基化水平的变化，还能够分析genebody区，基因间区等区域的甲基化水平的差异，分析甲基化对染色体的状态以及基因结构变化的影响，从多维度分析解决生物学问题。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+                              
+                <li><b>Q3：可以对无参考基因组的物种进行甲基化研究吗？</b>
+                        <ul>
+                            <li>全基因组甲基化测序强烈依赖基因组的完成程度，基因质量的好坏直接影响后续的分析结果，因此更适合有完整基因组信息的物种。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+                              
+                <li><b>Q4：甲基化水平计算方法都有哪些？</b>
+                        <ul>
+                            <li>甲基化水平计算方法共分四种：
+							<br>
+							1) 单个位点甲基化水平：
+							单个位点的甲基化水平＝支持甲基化C的reads数/总的reads数。
+							<br>
+							计算得到单个位点的甲基化水平后，我们用二项分布检验判断某位点是否为甲基化C位点。
+							用从左开始第二个C计算单个位点甲基化水平。
+							对于某个区域的甲基化水平计算方法，不同的方法会得到不同的结果。
+							<br>
+							2) 区域甲基化水平计算方法1：Fraction of methylated cytosines
+							即甲基化C占区域内所有覆盖到的C位点的比例。
+							<br>
+							3) 区域甲基化水平计算方法2：Mean methylation level
+							即所有C位点的平均甲基化水平，区域内所有甲基化的C的单个位点甲基化水平之和/区域内所有覆盖到的C位点的个数。
+							<br>
+							4) 区域甲基化水平计算方法3：Weighted methylation level
+							即加权甲基化水平，区域内所有甲基化C位点总的reads数/区域内总的覆盖度。
+							</li>						 
+                        </ul>    
+                </li> 
+                <br>
+                               
+                <li><b>Q5：全基因组甲基化测序可以与哪些组学进行联合研究？</b>
+                        <ul>
+                            <li>全基因组甲基化测序作为表观组学中真正意义上全范围甲基化检测的技术，可以与全基因组、外显子组测序、GWAS芯片整合分析遗传变异对于甲基化修饰的影响；可以联合转录组测序分析甲基化修饰对于基因表达的影响；可以联合其它表观方向如组蛋白修饰、染色质可及性分析整个表观调控图谱。</li>						 
+                        </ul>    
+                </li> 
+                <br>            
+            
+                              
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

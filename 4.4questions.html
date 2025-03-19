@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全外显子组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>全外显子组测序</p>
+                <a href="4.1introduction.html">分析原理</a>
+                <a href="4.2pipeline.html">分析流程</a>
+                <a href="4.3result.html">结果展示</a>
+                <a href="4.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>常见问题</h3>
+                <li><b>Q1：全外显子组测序一般推荐的测序深度是多少？</b>
+                        <ul>
+                            <li>根据研究目的和样品数量而定。一般建议有效测序深度至少大于 100X 以上。因为有文献报道，全外显子组测序的深度影响变异检测率，随着测序深度的升高，变异检出率增大，且达到一定深度时，变异检测达到平稳状态。内部的测试数据显示，在 100X 有效测序深度下的全外显子组测序中，SNP 在各深度梯度下的检出率、20X 的覆盖比例均达到一个很平稳的状态，可得到最显著有效的变异检出。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+               
+                <li><b>Q2：肿瘤研究推荐测序深度？肿瘤样品如何选对照样品？</b>
+                        <ul>
+                            <li>癌组织推荐 200X 以上，癌旁推荐 100X 以上，具体根据研究目的及经费情况可以调整。对于全外显子组测序，实体瘤一般选择癌旁或者血液作为对照，血液肿瘤可以选口腔细胞或者皮肤作对照组。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+
+                <li><b>Q3：什么是胚系突变，什么是体细胞突变？</b>
+                        <ul>
+                            <li>胚系突变是指在生殖细胞中发生的任何可遗传的突变，也称作获得性突变。胚系突变可遗传给后代；
+							<br>体细胞突变：生殖细胞系以外的体细胞中发生的突变。最广为熟知的体细胞突变造成的疾病就是癌症；
+							<br>遗传病研究关注胚系突变，而肿瘤研究大多关注体细胞突变。。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+				
+                <li><b>Q4：癌症分析时为什么需要成对样本？</b>
+                        <ul>
+                            <li>Germline Mutation（胚系突变）和 Somatic Mutation（体细胞突变），前者侧重于可遗传的、个体背景中所有细胞携带的突变，主要用于遗传易感性及药物基因组学的相关研究；后者侧重于肿瘤细胞特有、正常细胞没有的一类突变，通过寻找肿瘤与正常细胞间突变信息的差异，进一步研究癌症发生发展的机制。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+                              
+                <li><b>Q5：外显子测序的捕获效率如何？测序深度如何换算？</b>
+                        <ul>
+                            <li>平均测序深度大于 30X 时， 外显子组覆盖度达到杂交芯片可捕获的不低于 90% 的目标区域，可发现杂交芯片可捕获区域中 99% 的 SNPs (单核苷酸多态性)。 建议外显子组测序的测序深度为大于 100X 以上。
+							捕获效率是指测得比对到目标区域的序列（有效序列）占全部比对到参考基因组的序列的比例；捕获效率的高低不影响数据质量，只影响数据的有效比例。一般目标区域的捕获效率在60-70%，罗氏和安捷伦等外显子捕获试剂盒的目标区域大小在60Mb左右，即测序深度=10G*60%/60Mb=100X。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+                               
+                <li><b>Q6：Duplication 是如何产生的呢？</b>
+                        <ul>
+                            <li>在基因组测序中，duplication 是特指的 PCR-duplication。也就是在 PCR 过程中产生的基因重复片段。因为在测序过程中，为了确保测序效果一般将加好接头的 DNA 片段过量扩增，确保每一个孔中都能覆盖到足够多的片段。因此，同样一个 DNA 片段会扩增出多份拷贝，而这些拷贝有可能也会进入到孔中被测出来。这就会导致这个 DNA 位置的覆盖度升高，故需执行去重步骤。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+
+                <li><b>Q7：全外显子组测序过程中的假阴性和假阳性问题？</b>
+                        <ul>
+                            <li>假阴性的主要来源包括：
+							<br>
+							1）富集的探针未能覆盖所有待测区域；
+							<br>2）测序的不均衡性，尤其在测序深度较低时，部分区域未能被覆盖；
+							<br>
+							3）由于测序采用的是随机选取，存在较大的随机波动性，杂合子的比例会偏离1:1，当偏离较大或者测序深度低的时候，就可能会被遗漏；
+							<br>
+							4）GC含量的影响。
+							<br>
+							假阳性的主要来源包括：
+							<br>
+							1）测序的错误率较高，在测序深度较低时，容易造成错误判断；
+							<br>
+							2）当存在重复序列、STR等容易造成假阳性位点；
+							<br>
+							3）由于存在同源序列，部分测序读段（reads）被错误拼接；
+							<br>
+							4）测序的随机性，导致两个等位基因被测到的次数偏离1:1，造成基因型判读出错。</li>						 
+						</ul>    
+                </li> 
+                <br>
+
+				
+                              
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

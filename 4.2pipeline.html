@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全外显子组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        section li{
+            line-height: 35px;
+        }
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
+        img {
+            width: 800px;
+            height: auto; 
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+        .details-bsic li {
+            list-style-type: disc;
+			list-style-position: inside;
+			line-height: 40px;
+        }
+        .details-stad li {
+            list-style-type: disc;
+			list-style-position: inside;
+			line-height: 40px;
+        }
+		
+        ul ul {
+            list-style-type: circle;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>全外显子组测序</p>
+                <a href="4.1introduction.html">分析原理</a>
+                <a href="4.2pipeline.html">分析流程</a>
+                <a href="4.3result.html">结果展示</a>
+                <a href="4.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>分析流程</h3>
+                <p>全外显子组分析平台整体包括基础分析和标准分析。</p>  
+                <p></p>
+                <ul>
+                    <li><p><b>基础分析（Basic Analysis）</b>是对全外显子组原始数据质量控制、数据预处理、序列比对、比对后处理、变异检测、变异注释。</p></li>
+                    <li><p><b>标准分析（Standard Analysis）</b>是基于变异注释的结果进行数据过滤和筛选，可视化变异结果，结合临床信息进行解读等。</p></li>
+                    
+                </ul>
+                <figure>
+                    <img src="image/WES/pipeline.png" alt="全外显子组测序流程图">
+                    <figcaption>全外显子组分析流程</figcaption>
+                </figure>
+				
+			<br>
+            <div class="details-bsic">
+                <h3>基础分析</h3>
+				<p>测序完成后，需要对原始数据进行生物信息学分析。步骤主要包括：</p>
+				<ul>
+                    <li><b>数据预处理</b>
+                        <ul>
+                            <p>采用FastQC、MultiQC，检查原始测序数据的质量（如碱基质量、GC 含量、接头污染等）；采用Trimmomatic、Cutadapt去除测序接头和低质量碱基。</p>						 
+                        </ul>    
+                    </li>
+					
+                    <li><b>序列比对</b>
+                        <ul>
+                            <p>采用BWA-MEM、Bowtie2将测序 reads 比对到参考基因组上；采用samtools、Picard对比对结果进行排序并去除 PCR 重复。</p>						 
+                        </ul>    
+                    </li>	
+					
+                    <li><b>变异检测</b>
+                        <ul>
+                            <p>采用GATK检测单核苷酸变异（SNV）和小片段插入/缺失（Indel）。</p>						 
+                        </ul>    
+                    </li>	
+					
+                    <li><b>变异注释</b>
+                        <ul>
+                            <p>采用ANNOVAR、VEP（Variant Effect Predictor）、SnpEff对检测到的变异进行功能注释（如基因、外显子、氨基酸改变等）。</p>						 
+                        </ul>    
+                    </li>
+	
+				
+                </ul>
+            </div>
+			
+			<br>
+            <div class="details-stad">
+                <h3>标准分析</h3>
+                <p>根据质量分数、深度、频率等条件筛选可靠的变异，可视化变异结果，结合临床信息进行解读等。</p>
+                <ul>
+                    <li><b>数据过滤和筛选</b>
+                        <ul>
+                            <p>采用bcftools、GATK VariantFiltration对检测到的变异数据进行过滤和筛选。</p>                    
+                        </ul>
+                    </li>
+                    <li><b>数据分析及可视化</b>
+                        <ul>
+                            <p>采用IGV、UCSC Genome Broeser可视化变异结果，R、Python进行统计绘图。</p>                    
+                        </ul>
+                    </li> 
+                    <br>
+					
+                </ul>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

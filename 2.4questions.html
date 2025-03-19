@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10X 单细胞转录组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>10X 单细胞转录组测序</p>
+                <a href="2.1introduction.html">分析原理</a>
+                <a href="2.2pipeline.html">分析流程</a>
+                <a href="2.3result.html">结果展示</a>
+                <a href="2.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>常见问题</h3>
+
+                <li><b>Q1：如何确定Cluster的具体细胞类型？</b>
+                        <ul>
+                            <li>1、根据已知的 marker gene 来确定： 根据之前的经验和文献记载，已知某一些细胞类型会特异表达一些 marker gene， 比如 T 细胞中特异表达的 CD3/CD4，B细胞中表达的 CD19/CD20 等。
+                            <br>
+                            1) 根据 marker gene 在 cluster 细胞中的表达情况来确定：利用 Loupe Cell Browser 或其他软件，标记 cell 中表达 marker gene 的情况，来推测哪个 cluster 是某种细胞类型。
+                            <br>
+                            2) 根据软件鉴定到的差异表达基因或者 marker gene 来确定：Cell-Ranger 与 monocle2均提供 cluster 差异表达基因的结果，如果已知某种细胞的marker gene，可以在差异基因列表中寻找，是否存在这些 marker gene，从而推测该cluster 是否为某种细胞类型。
+                            <br>
+                            2、根据基因所在功能通路确定： 不清楚具体的 marker gene，或者某些 cluster 找不到已知的 marker gene。根据cluster中差异基因或者共表达基因所在 KEGG 和 GO 通路，推测细胞的功能。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+				
+                <li><b>Q2：拟时序分析的意义？</b>
+                        <ul>
+                            <li>在很多生物进程中，细胞并不是全部同时处于同一个时期的。利用单细胞基因表达研究细胞分化时，捕获到的细胞通常处于范围较广的不同时期：某些细胞细胞还未开始分化，某些处于中间状态，而另一些可能已经分化结束。所以整体看来，样品中的各个细胞基因表达波动较大，研究起来十分复杂。拟时间分析根据基因表达量信息，计算细胞与细胞时间的距离，估算出将所有细胞排列到其拟时间进程后的总最短路径，帮助了解样品中细胞的种类与细胞分化的过程。</li>						 
+                        </ul>    
+                </li> 
+                <br>				
+
+                <li><b>Q3：单细胞转录组测序后续验证实验还能怎么做？</b>
+                        <ul>
+                            <li>常见的后续验证实验包括对检测到的特定细胞类型进行定量验证，如流式细胞术检测细胞占比；对特定细胞的marker进行RNA或蛋白水平验证，如组化染色、免疫荧光染色、RNA原位杂交、流式分选等；对发现的关键细胞类型或基因进行功能研究，如对某种细胞进行干扰处理观察对模式动物的表型影响。</li>						 
+                        </ul>    
+                </li> 
+                <br>
+				
+        
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

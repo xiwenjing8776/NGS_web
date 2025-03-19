@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10X 单细胞转录组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        section li{
+            line-height: 35px;
+        }
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
+        img {
+            width: 800px;
+            height: auto; 
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+        .details-bsic li {
+            list-style-type: disc;
+			list-style-position: inside;
+			line-height: 40px;
+        }
+
+        ul ul {
+            list-style-type:circle;
+        }
+        h2 {
+            text-align: center;
+            color: #004aad;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+            text-align: left;
+        }
+        thead {
+            background-color: #004AAD;
+            color: white;
+            font-weight: bold;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+        th {
+            text-align: center;
+        }
+        td[rowspan] {
+            background-color: #c4cdd6;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>10X 单细胞转录组测序</p>
+                <a href="2.1introduction.html">分析原理</a>
+                <a href="2.2pipeline.html">分析流程</a>
+                <a href="2.3result.html">结果展示</a>
+                <a href="2.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>分析流程</h3>
+                <p> 10X 单细胞转录组分析平台整体包括基础分析、标准分析和个性化分析三个部分。</p>  
+                <p></p>
+                <ul>
+                    <li><p><b>基础分析（Basic Analysis）</b>是对原始测序数据进行参考基因组比对、细胞定量，得到单细胞表达矩阵。
+					</p></li>
+                    <li><p><b>标准分析（Standard Analysis）</b>是基于单细胞表达矩阵采用Seurat进行分析，内容包括质量控制、细胞或基因过滤、标准化、PCA、UMAP降维、聚类、差异基因分析、通路富集分析、细胞注释、拷贝数变异等。</p></li>
+                    <li><p><b>个性化分析（Personalized Analysis）</b>包括拟时序分析，细胞通讯分析，加权基因共表达网络分析等。</p></li>
+                </ul>
+                <figure>
+                    <img src="image/scRNA-seq/scpipeline.png" alt="单细胞测序流程图">
+                    <figcaption>10X 单细胞转录组分析流程</figcaption>
+                </figure>
+				<br>
+				
+            <div class="table-div">
+                <h2>表1 分析流程详细信息</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>分析流程</th>
+                            <th>信息分析内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="1">基础分析<br>(Basic Analysis)</td>
+                            <td>采用 Cell Ranger 进行定量分析，原始数据质控，参考基因组比对，数据统计等</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="7">标准分析<br>(Standard Analysis)</td>
+                            <td>采用 Seurat 对 scRNA-seq 数据进行标准预处理工作，包括基于 QC 指标的过滤、数据标准化和归一化、检测高变异基因的功能，以及细胞异质性分析和基因表达分析等</td>
+                        </tr>
+                        <tr>
+                            <td>1. 质量控制<br>
+                                (1) 样本相关性<br>
+                                (2) 数据过滤，对于每个细胞中检测到的基因数量，采取过滤条件是基因计数低于 200，UMI 计数大于 5000，线粒体占比>50%</td>
+                        </tr>
+                        <tr>
+                            <td>2. 细胞异质性分析<br>
+                                细胞异质性分析包括降维、聚类、marker 基因、细胞类型鉴定等<br>
+                                (1) 对标准化的数据进行 PCA 线性降维分析<br>
+                                (2) 对标准化的数据还提供了多种非线性降维技术，如 t-SNE 和 UMAP<br>
+                                (3) 如果样本属于不同的分组，可以分别查看不同组别样本的 UMAP 结果</td>
+                        </tr>
+                        <tr>
+                            <td>3. 基因表达分析<br>
+                                基因表达分析通过差异表达分析寻找不同细胞类群的差异基因，结果包括：<br>
+                                (1) 不同细胞类群的 top3 差异基因的点图、热图<br>
+                                (2) 不同细胞类群 marker 基因的表达分布</td>
+                        </tr>
+                        <tr>
+                            <td>4. 通路富集分析<br>
+                                对于不同细胞类群之间的差异基因，根据 avg_log2FC 的值分别进行上调和下调基因的 GO 和 KEGG 的通路富集分析<br>
+                                对于不同细胞类群之间的所有基因，进行 GSEA 基因集富集分析<br>
+                                (1) GO 富集分析<br>
+                                (2) KEGG 富集分析<br>
+                                (3) GSEA 基因集富集分析</td>
+                        </tr>
+                        <tr>
+                            <td>5. 细胞注释<br>
+                                如果已知细胞类型和对应的 marker 基因，可重新进行注释。</td>
+                        </tr>
+                        <tr>
+                            <td>6. 拷贝数变异分析<br>
+                                inferCNV 是一个常用的从肿瘤scRNA-Seq 数据推断拷贝数变化分析的工具，用于识别数据中的恶性细胞，结果包括：<br>
+                                (1) 初步的 inferCNV 结果（未经去噪或 HMM 预测）<br>
+                                (2) 最终 inferCNV 去噪后的热图</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">个性化分析<br>(Personalized Analysis)</td>
+                            <td>1. 拟时序分析<br>
+                                拟时序分析（细胞轨迹推断，monocle2），根据每个细胞的基因表达情况找出关键基因的表达模式来对细胞进行排序(推断出细胞之间的先后顺序)，反推出细胞发育轨迹</td>
+                        </tr>
+                        <tr>
+                            <td>2. 细胞通讯分析<br>
+                                细胞通讯受配体分析（CellChat），通过整合基因表达与信号配体、受体及其辅助因子之间的相互作用的先验知识来建立细胞-细胞交流的概率，进而对细胞间通讯做出预测</td>
+                        </tr>
+                        <tr>
+                            <td>3. 加权基因共表达网络分析<br>
+                                加权基因共表达网络通过寻找协同表达的基因模块(module)，探索基因网络与关注的类型之间的关系，以及网络中的核心基因</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+			<br>
+			
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+        
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全外显子组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+
+        .visual-disc li {
+            list-style-type: disc;
+            line-height: 40px;
+			list-style-position: inside;
+        }
+		
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>全外显子组测序</p>
+                <a href="4.1introduction.html">分析原理</a>
+                <a href="4.2pipeline.html">分析流程</a>
+                <a href="4.3result.html">结果展示</a>
+                <a href="4.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>全外显子组测序概述</h3>
+                <p>全外显子组测序（Whole-exome sequencing, WES）是一种广泛应用的基因组测序技术，利用探针杂交富集外显子区域的基因组序列，结合高通量测序检测与蛋白质功能变异相关遗传突变的技术手段。与全基因组测序（Whole-genome sequencing, WGS）不同，WES 主要关注基因组中的外显子区域，即负责编码蛋白质的部分，外显子组约占整个基因组的 1.5%，包含了大约 2.2 万个基因，鉴于超过 85% 的孟德尔遗传病与这部分基因组相关，WES测序因此更高深度、更加经济、更加高效。
+                </p>  
+                <br>
+            <h3>测序原理</h3>
+            <figure>
+                <img src="image/WES/priciple.png" al="WES 测序原理">
+                <figcaption>图1 WES技术原理示意图</figcaption>
+            </figure>
+                <p>WES测序流程主要包括：<b>样本制备、外显子捕获、文库构建、高通量测序以及数据分析。</b></p>
+                <br>
+                <p>WES全外显子组测序技术是一种针对基因组中外显子区域（即编码蛋白质的区域）进行高通量测序的技术，其核心原理是通过杂交捕获技术富集外显子区域，然后利用高通量测序技术对这些区域进行测序。具体步骤如下：</p>
+                <br>
+                <p><b>首先，</b>从样本（如血液、组织）中提取高质量的基因组 DNA。使用超声或酶切将 DNA 打断成 150-300 bp 的片段。对 DNA 片段进行末端修复，并在 3' 端添加 A 尾，以便与测序接头连接。将测序接头连接到 DNA 片段的两端，形成测序文库。</p>
+                <br>
+                <p><b>外显子杂交捕获：</b>将测序文库与外显子捕获探针（通常是生物素标记的 RNA 或 DNA 探针）杂交。这些探针设计为与外显子区域互补。通过磁珠（如链霉亲和素磁珠）捕获杂交复合物，洗去未结合的 DNA，从而富集外显子区域。
+                </p>
+                <br>
+                <p><b>文库构建：</b>将捕获的外显子 DNA 洗脱下来，并进行 PCR 扩增，形成最终的外显子测序文库。</p>
+                <br>
+                <p><b>高通量测序与数据分析：</b>将外显子测序文库加载到高通量测序仪（如 Illumina 平台）上进行测序。通常采用双端测序（Paired-End Sequencing），读长一般为 2×150 bp。</p>
+				<br>
+                <div class="application">
+                    <h3>应用范围</h3>
+                    <ul class="visual-disc">
+                        <li>单基因疾病或复杂疾病研究；</li>
+                        <li>人群队列研究（GWAS）；</li>
+                        <li>多组学研究；</li>
+						<li>孟德尔遗传病研究；</li>
+                        <li>肿瘤体细胞突变、突变特征、肿瘤进化、新抗原预测等研究；</li>
+                        <li>肿瘤遗传易感基因分析、致病机理（驱动基因）、肿瘤异质性、复发/耐药机制、新抗原与疗效等研究；</li>
+						<li>药物基因组学研究；</li>
+						<br>
+                </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+        
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

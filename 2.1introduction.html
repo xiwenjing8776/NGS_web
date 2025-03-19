@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10X 单细胞转录组测序</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        section li{
+            line-height: 35px;
+        }	
+        figure {
+            text-align: center; 
+            margin: 20px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto; 
+            border-radius: 8px;
+        }
+
+        figcaption {
+            font-size: 20px;
+            color: #666;
+            font-style: bold;
+            margin-top: 10px; 
+        }
+
+        .visual-disc li {
+            list-style-type: disc;
+            line-height: 40px;
+			list-style-position: inside;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <img src="image/logo.png" alt="logo" class="img-center">
+    </header>
+    <nav>
+        <ul class="navlist">
+            <li><a href="index.html" class="btlist">首页</a></li>
+            <li><a href="#" class="btlist">研究院概况</a>
+                <ul class="droplist">
+                    <li><a href="http://ycy.cpu.edu.cn/yjyjj/list.htm" target="_blank">研究院简介</a></li>
+                    <li><a href="http://ycy.cpu.edu.cn/12424/list.htm" target="_blank">院领导</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">科研队伍</a>
+                <ul class="droplist">
+                    <li><a href="https://ycy.cpu.edu.cn/12386/list.htm" target="_blank">全职</a></li>
+                    <li><a href="https://ycy.cpu.edu.cn/12387/list.htm" target="_blank">专职</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="btlist">二代测序平台</a>
+                <ul class="droplist">
+                    <li><a href="2.1introduction.html">10X 单细胞转录组测序</a></li>
+                    <li><a href="3.1introduction.html">RNA-Seq</a></li>
+                    <li><a href="4.1introduction.html">全外显子组测序</a></li>
+                    <li><a href="5.1introduction.html">全基因组甲基化测序</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <aside>
+            <p><a href="2.1introduction.html">10X 单细胞转录组测序</a></p>
+            <p><a href="3.1introduction.html">RNA-Seq</a></p>
+            <p><a href="4.1introduction.html">全外显子组测序</a></p>
+            <p><a href="5.1introduction.html">全基因组甲基化测序</a></p>
+    </aside>
+    <main>
+        <div class="navbar">
+                <p>10X 单细胞转录组测序</p>
+                <a href="2.1introduction.html">分析原理</a>
+                <a href="2.2pipeline.html">分析流程</a>
+                <a href="2.3result.html">结果展示</a>
+                <a href="2.4questions.html">常见问题</a>
+        </div>
+        <section>
+            <h3>单细胞测序概述</h3>
+                <p>单细胞转录组测序（Single-cell RNA sequencing,scRNA-seq）是一种高通量技术，能够在单细胞水平解析基因表达情况，从而揭示细胞群体的异质性。这项技术突破了传统 RNA 测序（bulk RNA-seq）的局限性，使研究人员能够深入探索组织或器官内的不同细胞类型、发育轨迹以及疾病状态下的细胞变化。
+				</p>  
+                <br>
+				
+                <p>相比于传统的 RNA-seq 方法，scRNA-seq 能够检测单个细胞的基因表达，而不是群体平均值，因此可以识别少量稀有细胞类型，解析不同细胞亚群的基因调控网络，并追踪细胞在发育或疾病进程中的动态变化。
+                </p>
+				<br>
+				
+            <h3>测序原理</h3>
+            <figure>
+                <img src="image/scRNA-seq/priciple.jpg" al="10x genomics 测序原理">
+                <figcaption>图1 10X Genomics技术原理示意图</figcaption>
+            </figure>
+                <p>单细胞测序流程主要包括：<b>单细胞分离、核酸提取、文库构建、上机测序以及数据分析。</b></p>
+                <br>
+				
+                <ul class="visual-disc">
+                    <p>10x Genomics单细胞测序技术是一种基于微流控的高通量单细胞分析方法，其核心原理是通过独特的凝胶珠（Gel Beads）和油滴包裹系统，实现对单个细胞的分离和标记。具体步骤如下：
+					</p>
+					<br>
+					
+                    <p><b>首先，</b>将细胞悬液与含有独特条形码（Barcode）的凝胶珠混合。每个凝胶珠上携带数百万个不同的条形码序列，用于标记单个细胞的RNA分子。细胞和凝胶珠通过微流控芯片进入油滴系统，形成油包水的微滴。每个微滴中通常包含一个细胞和一个凝胶珠，确保单个细胞的独立性。
+					</p>
+					<br>
+						
+                    <p><b>细胞裂解与条形码标记：</b>在微滴内，细胞被裂解释放RNA，同时凝胶珠溶解，释放出条形码序列和逆转录酶。逆转录过程将RNA转化为带有条形码的cDNA，每个cDNA分子都携带独特的细胞条形码和分子标签（UMI，Unique Molecular Identifier），用于区分不同细胞和不同RNA分子。</p>
+					<br>
+						
+                    <p><b>cDNA扩增与文库构建：</b>微滴破裂后，带有条形码的cDNA被回收并进行PCR扩增，构建测序文库。文库中包含每个细胞的转录组信息，并通过条形码和UMI进行精确追踪。
+					</p>
+					<br>
+					
+                    <p><b>高通量测序与数据分析：</b>最后，利用高通量测序平台（如Illumina）对文库进行测序。测序数据通过生物信息学工具（如Cell Ranger）进行分析，识别细胞类型、基因表达谱以及细胞间的异质性。
+					</p>
+					<br>
+                </ul>
+				
+                <div class="application">
+                    <h3>应用范围</h3>
+                    <ul class="visual-disc">
+                        <li>肿瘤异质性研究；</li>
+                        <li>干细胞分化和组织器官发育研究；</li>
+                        <li>免疫研究；</li>
+                        <li>疾病机制研究；</li>
+                        <li>药物筛选与研发；</li>
+						<br>
+                </div>
+                	
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 版权所有 中国药科大学原创药物研究院WeiLab</p>
+    
+        <div class="footer-content">
+            <div class="address">
+                <h3>联系我们</h3>
+                <ul>
+                    <li>玄武门校区：南京市鼓楼区童家巷24号 210009</li>
+                    <li>江宁校区：南京市江宁区龙眠大道639号 211198</li>
+                    <li>电话：025-12345678</li>
+                </ul>
+            </div>
+    
+            <div class="link">
+                <h3>相关链接</h3>
+                <ul>
+                    <li><a href="https://www.most.gov.cn/index.html" target="_blank">中华人民共和国科学技术部</a></li>
+                    <li><a href="http://www.cams.ac.cn/" target="_blank">中国医学科学院北京协和医学院</a></li>
+                    <li><a href="http://www.moe.gov.cn/" target="_blank">中华人民共和国教育部</a></li>
+                    <li><a href="http://www.natcm.gov.cn/" target="_blank">国家中医药管理局</a></li>
+                    <li><a href="https://www.cpa.org.cn/" target="_blank">中国药学会</a></li>
+                    <li><a href="http://www.nhc.gov.cn/" target="_blank">国家卫生健康委员会</a></li>
+                    <li><a href="https://www.nsfc.gov.cn/" target="_blank">国家自然科学基金委员会</a></li>
+                    <li><a href="https://www.nmpa.gov.cn/" target="_blank">国家药品监督管理局</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>
